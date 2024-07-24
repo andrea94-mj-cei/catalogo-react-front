@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 
 
 
-const Producto = () => {
+const Fecha = () => {
 
-    const {productoId} = useParams();
+    const {fechaId} = useParams();
 
     return ( 
-        <h1>Estoy viendo el producto: {productoId}</h1>
+        <h1>Estoy viendo el producto: {fechaId}</h1>
      );
 }
  
-export default Producto;
+export default Fecha;

@@ -1,7 +1,7 @@
-const Catalogo = () => {
+const CatalogoDj = () => {
     return ( 
         <h1>Estoy en Catálogo</h1>
      );
 }
  
-export default Catalogo;
+export default CatalogoDj;

@@ -11,7 +11,8 @@ const Layout = () => {
         <div>
             {/* Header de nuestro documento */}
             <header>
-                <h1>Universe Fest</h1>
+                <h1>BeatMastersTechno</h1>
+
             </header>
 
             <main>
