@@ -4,8 +4,15 @@ Diseño: oscuro
 
 ## Páginas
 1. Los DJ's
-2. Info de cada DJ
-3. Lugar, precios y fecha de cada masterclass
-4. Carrito de compra
+2. Catálogo de DJ's con sus fotos
+3. Lugar
+4. Fecha
+5. Precio
+6. Carrito
+
+
+## useContext
+
+- Vamos a nuestro componente padre, lo importamos
 
 

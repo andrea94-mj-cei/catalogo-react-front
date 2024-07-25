@@ -11,7 +11,7 @@ const ErrorPage = () => {
     return ( 
         
         <div>
-            <h2>Error fatal</h2>
+            <h2>Ha ocurrido un error</h2>
             <p>
                 {/* Imprime, si error existe, busca statusText, o si error tiene un mensaje , o "pagina no encontrada"  */}
                 {error ?.statusText || error ?.message || "Página no encontrada"}

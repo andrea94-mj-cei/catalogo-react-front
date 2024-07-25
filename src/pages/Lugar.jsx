@@ -1,3 +1,6 @@
+import { useEffect, useState, useContext } from "react";
+
+
 const Lugar = () => {
 
     
