@@ -15,7 +15,7 @@ const Layout = () => {
 
 
     return ( 
-        <ModoOscuroContext.Provider value={{tema, setTema, nombre}}>
+        // <ModoOscuroContext.Provider value={{tema, setTema, nombre}}>
         <div>
             {/* Header de nuestro documento */}
             <header>
@@ -33,7 +33,7 @@ const Layout = () => {
 
             {/* Footer de nuestro documento */}
         </div>
-        </ModoOscuroContext.Provider>
+        // </ModoOscuroContext.Provider>
      );
 }
  
