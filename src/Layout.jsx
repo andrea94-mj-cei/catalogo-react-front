@@ -6,12 +6,6 @@ import './css/index.css'
 import './css/catalogo.css'
 import { BrowserRouter as Router, Route, Link, Routes, NavLink, useParams } from "react-router-dom";
 
-// import { createContext, useState } from 'react' //importamos createcontext
-
-// import CatalogoDj from './pages/CatalogoDj';
-// import Fecha from './pages/Fecha';
-// import Lugar from './pages/Lugar';
-// import Precio from './pages/Precio';
 
 
 const Layout = () => {
@@ -19,11 +13,18 @@ const Layout = () => {
 
 
     return ( 
-
+        
         <div>
             {/* Header de nuestro documento */}
-            <header>
-                <h1>BeatMastersTechno</h1>
+            <header className="Header">
+                
+                <Link to="/"><h1>BeatMastersTechno</h1></Link>
+            <ul className="Botones">
+                <li><NavLink to="/fechas" className="Boton">Fechas</NavLink></li>
+                <li><NavLink to="/lugar" className="Boton">Ubicaciones</NavLink></li>
+                <li><NavLink to="/precio" className="Boton">Precios</NavLink></li>
+            </ul>
+
 
             </header>
             
@@ -33,9 +34,10 @@ const Layout = () => {
 
             
 
+
             {/* Footer de nuestro documento */}
         </div>
-        
+    
      );
 }
  

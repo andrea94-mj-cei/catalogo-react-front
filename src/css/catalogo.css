@@ -1,3 +1,43 @@
+.Header{
+    width: 100%;
+    margin: 2rem auto;
+}
 .Home-p{
     font-family: "Anton SC", sans-serif;
+    margin-bottom: 3rem;
+    font-size: 2em;
+    margin: 3rem auto;
+}
+.Botones{
+    width: 60%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: auto;
+}
+.Boton{
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 1px solid white;
+    border-radius: 7%;
+}
+.Container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+.Tarjeta{
+    background-color: darkcyan;
+    border-radius: 7%;
+    gap: 2rem;
+    margin: 1rem auto;
+}
+.Tarjeta-img{
+    border-radius: 7%;
+}
+.Tarjeta-h2{
+    display: flex;
+    justify-content: center;
 }

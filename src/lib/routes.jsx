@@ -4,7 +4,6 @@ import { createBrowserRouter } from "react-router-dom";
 
 //importamos las páginas:
 import Home from "../pages/Home";
-import CatalogoDj from "../pages/CatalogoDj";
 import Fecha from "../pages/Fecha";
 import Lugar from "../pages/Lugar";
 import Precio from "../pages/Precio";
@@ -27,12 +26,8 @@ const router = createBrowserRouter([{
             element: <Home/>
         },
         {
-            path: 'catalogo', //Aquí no se pone la barra antes ya que la está cogiendo ya por defecto del path de arriba
-            element: <CatalogoDj/>
-        },
-        {
             //con :productoId, vamos a leer un producto en concreto
-            path: 'producto/:productoId',
+            path: 'fechas',
             element: <Fecha/>
         },
         {

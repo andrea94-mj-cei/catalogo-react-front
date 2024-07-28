@@ -88,7 +88,7 @@
         {
             "id": 12,
             "name": "Nico Moreno",
-            "img": "/backend/imgs/nico-moreno-jpg",
+            "img": "/backend/imgs/nico-moreno.jpg",
             "origin": "Madrid",
             "date": "2025-03-17",
             "price": 560
@@ -96,7 +96,7 @@
         {
             "id": 13,
             "name": "Paul Kalkbrener",
-            "img": "/backend/imgs/paul-kalkbrener.jpg",
+            "img": "/backend/imgs/paul-kaklbrener.jpg",
             "origin": "Amsterdam",
             "date": "2025-10-05",
             "price": 950
@@ -120,7 +120,7 @@
         {
             "id": 16,
             "name": "GonÇalo",
-            "img": "/backend/imgs/gonÇalo.jpg",
+            "img": "/backend/imgs/gonzalo.jpg",
             "origin": "Madrid",
             "date": "2025-03-17",
             "price": 620

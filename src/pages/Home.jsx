@@ -1,46 +1,69 @@
 import { useEffect, useState, useContext } from "react";
 // import { ModoOscuroContext } from "../Layout"; //importandolo ya lo podemos utilizar 
-import data from '/backend/datos.json'; 
+
 
 const Home = () => {
-    // const [catalogo, setCatalogo] = useState();
-    // const [filter, setFilter] = useState ("");
-    // const [info, setInfo] = useState({
-    //     count: 0,
-    //     next: null,
-    //     prev: null,
-    //     pages: 0
-    // })
-    const [datos, setDatos] = useState([]);
+    const [catalogo, setCatalogo] = useState([]);
+    const [filter, setFilter] = useState ("");
+    const [errorData, setErrorData] = useState("");
+    const [info, setInfo] = useState({
+        count: 0,
+        next: null,
+        prev: null,
+        pages: 0
+    });
 
-    useEffect(() => {
-      fetch('/backend/datos.json')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => setDatos(data))
-        .catch(error => console.error('Error al cargar el JSON:', error));
-    }, []);
+    useEffect(()=> {
+        getCatalogo('/public/datos.json');
+    })
+    const getCatalogo = async (url) => {
+        const respuesta = await fetch(url);
+
+        const objeto = await respuesta.json();
+        // console.log("[CatalogoDj] Objeto vale:", objeto);
+
+        if(objeto.error){
+            setErrorData("No se han encontrado resultados");
+            setCatalogo([]);
+            setInfo({});
+            return;
+        }else{
+            setErrorData("");
+            setCatalogo(objeto.results);
+            setInfo(objeto.info);
+        }
+
+        setCatalogo(objeto.results);
+        setInfo(objeto.info);
+    }
     
 
 
     return ( 
         <>
-        <p className="Home-p">¿Quieres aprender a producir tu propia música de mano de los mejores DJ's del momento?</p>
         <div>
-      <h1>Datos del JSON</h1>
-      <ul>
-        {datos.map((item, index) => (
-          <li key={index}>{item.name}</li>
-        ))}
-      </ul>
-    </div>
+        <p className="Home-p">¿Quieres aprender a producir tu propia música de mano de los mejores DJ's del momento?</p>
+        </div>
+
+        {
+            catalogo.map((catalogo) =>(
+                <ArtistaCard key={catalogo.id} {...catalogo}/>
+            ))
+        }
         
         </>
     );
+
 }
- 
+ const ArtistaCard = ({name, img}) =>{
+    return(
+        <section className="Container">
+        <div className="Tarjeta" >
+            <img className="Tarjeta-img" src={img} alt={name} />
+            <h2 className="Tarjeta-h2">{name}</h2>
+        </div>
+        </section>
+    )
+}
+
 export default Home;
