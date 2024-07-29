@@ -7,10 +7,10 @@ import { useParams } from "react-router-dom";
 
 const Fecha = () => {
 
-    const {fechaId} = useParams();
+    // const {fecha} = useParams();
 
     return ( 
-        <h1>Estoy viendo el producto: {fechaId}</h1>
+        <h2>Fecha </h2>
      );
 }
  

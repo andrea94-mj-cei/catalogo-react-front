@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react";
+
 // import { ModoOscuroContext } from "../Layout"; //importandolo ya lo podemos utilizar 
 
 
@@ -20,12 +21,12 @@ const Home = () => {
         const respuesta = await fetch(url);
 
         const objeto = await respuesta.json();
-        // console.log("[CatalogoDj] Objeto vale:", objeto);
+        
 
         if(objeto.error){
             setErrorData("No se han encontrado resultados");
-            setCatalogo([]);
-            setInfo({});
+            setCatalogo();
+            setInfo();
             return;
         }else{
             setErrorData("");

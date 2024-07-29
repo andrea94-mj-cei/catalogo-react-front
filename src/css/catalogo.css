@@ -20,8 +20,8 @@
 .Boton{
     background-color: transparent;
     padding: 0.5rem;
-    border: 1px solid white;
-    border-radius: 7%;
+    border: 2px solid darkcyan;
+    border-radius: 10%;
 }
 .Container{
     display: flex;
