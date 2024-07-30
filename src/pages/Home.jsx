@@ -7,12 +7,12 @@ const Home = () => {
     const [catalogo, setCatalogo] = useState([]);
     const [filter, setFilter] = useState ("");
     const [errorData, setErrorData] = useState("");
-    const [info, setInfo] = useState({
-        count: 0,
-        next: null,
-        prev: null,
-        pages: 0
-    });
+    // const [info, setInfo] = useState({
+    //     count: 0,
+    //     next: null,
+    //     prev: null,
+    //     pages: 0
+    // });
 
     useEffect(()=> {
         getCatalogo('/public/datos.json');
@@ -26,16 +26,16 @@ const Home = () => {
         if(objeto.error){
             setErrorData("No se han encontrado resultados");
             setCatalogo();
-            setInfo();
+            // setInfo();
             return;
         }else{
             setErrorData("");
             setCatalogo(objeto.results);
-            setInfo(objeto.info);
+            // setInfo(objeto.info);
         }
 
         setCatalogo(objeto.results);
-        setInfo(objeto.info);
+        // setInfo(objeto.info);
     }
     
 
@@ -45,25 +45,26 @@ const Home = () => {
         <div>
         <p className="Home-p">¿Quieres aprender a producir tu propia música de mano de los mejores DJ's del momento?</p>
         </div>
+        <section className="Container">
 
         {
             catalogo.map((catalogo) =>(
                 <ArtistaCard key={catalogo.id} {...catalogo}/>
             ))
         }
+        </section>
         
         </>
     );
 
 }
- const ArtistaCard = ({name, img}) =>{
+ const ArtistaCard = ({name, img}) =>{ 
+    const isActive = (name == "Claptone") ? `Tarjeta isActive`: "Tarjeta"
     return(
-        <section className="Container">
-        <div className="Tarjeta" >
+        <div className= {isActive} >
             <img className="Tarjeta-img" src={img} alt={name} />
             <h2 className="Tarjeta-h2">{name}</h2>
         </div>
-        </section>
     )
 }
 
