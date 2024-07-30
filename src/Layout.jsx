@@ -19,7 +19,7 @@ const Layout = () => {
             <header className="Header">
                 
                 <Link to="/"><h1>BeatMastersTechno</h1></Link>
-            <ul className="Botones">
+                <ul className="Botones">
                 <li><NavLink to="/fechas" className="Boton">Fechas</NavLink></li>
                 <li><NavLink to="/lugar" className="Boton">Ubicaciones</NavLink></li>
                 <li><NavLink to="/precio" className="Boton">Precios</NavLink></li>

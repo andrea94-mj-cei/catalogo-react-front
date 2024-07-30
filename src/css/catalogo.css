@@ -1,12 +1,19 @@
 .Header{
     width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
     margin: 2rem auto;
 }
 .Home-p{
+    width: 100%;
+    max-width: 1400px;
     font-family: "Anton SC", sans-serif;
-    margin-bottom: 3rem;
     font-size: 2em;
     margin: 3rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
 }
 .Botones{
     width: 60%;
@@ -24,9 +31,12 @@
     border-radius: 10%;
 }
 .Container{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 .Tarjeta{
     background-color: darkcyan;
