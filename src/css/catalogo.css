@@ -1,3 +1,5 @@
+/* PÁGINA PRINCIPAL (HOME) */
+
 .Header{
     width: 100%;
     display: flex;
@@ -46,8 +48,27 @@
 }
 .Tarjeta-img{
     border-radius: 7%;
+    cursor: pointer;
 }
 .Tarjeta-h2{
+    display: flex;
+    justify-content: center;
+}
+
+.Tarjeta-p{
+    text-align: center;
+}
+
+
+/* FOOTER */
+
+.Section-footer{
+    background-color: darkcyan;
+    padding: 0.8rem;
+    margin-top: 2rem;
+}
+
+.Footer-p{
     display: flex;
     justify-content: center;
 }

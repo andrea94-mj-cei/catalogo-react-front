@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 
+import ArtistaCard from "../components/ArtistaCard";
 
 const Home = () => {
   const [catalogo, setCatalogo] = useState([]);
@@ -54,15 +55,6 @@ const Home = () => {
         </>
     );
 
-}
- const ArtistaCard = ({name, img}) =>{ 
-    const isActive = (name == "Claptone") ? `Tarjeta isActive`: "Tarjeta"
-    return(
-        <div className= {isActive} >
-            <img className="Tarjeta-img" src={img} alt={name} />
-            <h2 className="Tarjeta-h2">{name}</h2>
-        </div>
-    )
 }
 
 export default Home;

@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import './css/index.css'
 import './css/catalogo.css'
 import { BrowserRouter as Router, Route, Link, Routes, NavLink, useParams } from "react-router-dom";
+import Footer from "./components/Footer";
 
 
 
@@ -35,7 +36,9 @@ const Layout = () => {
             
 
 
-            {/* Footer de nuestro documento */}
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     
      );
