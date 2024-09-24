@@ -7,6 +7,12 @@
     justify-content: center;
     margin: 0 auto;
 }
+
+.Header-h1{
+    font-size: 6rem;
+    color: black;
+    text-shadow: 1px 1px 6px darkcyan;
+}
 .Home-p{
     width: 100%;
     max-width: 1400px;
@@ -17,7 +23,7 @@
     justify-content: space-around;
     align-content: center;
 }
-.Botones{
+.Header-ul{
     width: 60%;
     display: flex;
     flex-flow: row nowrap;
@@ -26,11 +32,10 @@
     gap: 3rem;
     margin: auto;
 }
-.Boton{
-    background-color: transparent;
-    padding: 0.5rem;
-    border: 2px solid darkcyan;
-    border-radius: 10%;
+.Header-li{
+    color: darkcyan;
+    font-size: 1rem;
+    text-transform: uppercase;
 }
 .Container{
     display: grid;
