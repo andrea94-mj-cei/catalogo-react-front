@@ -1,5 +1,6 @@
 /* PÁGINA PRINCIPAL (HOME) */
 
+
 .Header{
     width: 100%;
     display: flex;
@@ -38,12 +39,12 @@
     text-transform: uppercase;
 }
 .Container{
+    
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 .Tarjeta{
     background-color: darkcyan;
@@ -64,6 +65,13 @@
     text-align: center;
 }
 
+/* FORMULARIO REGISTRO */
+
+.Form-registro{
+    background-color: darkcyan;
+    display: flex;
+    flex-flow: column nowrap;
+}
 
 /* FOOTER */
 

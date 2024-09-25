@@ -13,6 +13,8 @@ import Admin from "@/pages/Admin"
 //impoprtamos páginas especiales:
 import Layout from "@/Layout";
 import ErrorPage from "@/Error-page";
+import PrivateRoute from "@/components/PrivateRoute";
+
 
 
 
@@ -42,7 +44,7 @@ const router = createBrowserRouter([{
         },
         {
             path: 'administrador',
-            element: <Admin/>
+            element: <PrivateRoute><Admin/></PrivateRoute>
         },
         {
             //El * busca cualquier cosa que no tenga asignada una ruta específica
