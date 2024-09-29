@@ -1,8 +1,9 @@
 import dotenv from 'dotenv';
+import path from 'path';
 
 
 //Creacion de variable __dirname para usar carpeta public con VERCEL
-import path from 'path';
+//nos dice en que carpeta de nuestro ordenador se está ejecutando mi servidor express
 export const __dirname = path.resolve();
 
 
