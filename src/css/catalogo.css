@@ -1,5 +1,5 @@
-/* PÁGINA PRINCIPAL (HOME) */
 
+/* HEADER */
 
 .Header{
     width: 100%;
@@ -38,6 +38,24 @@
     font-size: 1rem;
     text-transform: uppercase;
 }
+
+.Usuario{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.Img-usuario{
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+}
+
+
+/* SECCIÓN HOME */
+
 .Container{
     
     display: grid;
@@ -65,13 +83,34 @@
     text-align: center;
 }
 
-/* FORMULARIO REGISTRO */
+/* SECCIONES FORMULARIOS REGISTRO Y LOGIN */
 
-.Form-registro{
-    background-color: darkcyan;
+Form{
+    margin: 1rem auto;
+    width: 50%;
+    border: 1px solid darkcyan;
+    border-radius: 8%;
     display: flex;
     flex-flow: column nowrap;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
 }
+
+Input{
+    height: 1.5rem;
+}
+
+Button{
+    margin: 0 auto;
+    height: 2.5rem;
+    border: 1px solid darkcyan;
+}
+
+Button:hover{
+    background-color: darkcyan;
+}
+
 
 /* FOOTER */
 

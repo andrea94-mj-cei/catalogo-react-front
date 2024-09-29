@@ -1,5 +1,6 @@
 //Hooks
 import {useUser} from '@/hooks/useUser';
+import Login from '@/pages/Login';
 
 const PrivateRoute = ({children}) => {
 
@@ -8,7 +9,7 @@ const PrivateRoute = ({children}) => {
     return user ? children
             :<>
             <h2>Ruta privada</h2>
-             <p>No tienes permiso para ver esta ruta</p>
+             <p>Accede a tu cuenta para visualizar el contenido</p>
              <Login/>
             </>
         

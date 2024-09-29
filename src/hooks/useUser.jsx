@@ -9,6 +9,9 @@ const UserContext = createContext();
 export function UserProvider({children}){
     const [user, setUser] = useState(null);
 
+    //variables de entorno
+    const {VITE_API_URL, VITE_BACKEND} = import.meta.env;
+
     //ver si ya estoy logueado
     useEffect(()=>{
         const storedUser=localStorage.getItem("user");
@@ -17,25 +20,42 @@ export function UserProvider({children}){
         }
     },[]);
 
-    //login
-    const login =(userData)=>{
+    //LOGIN
+    const login = async (userData)=>{
         console.log('Estoy en login');
+
         //fetch para enviarle al backend!
+        const response = await fetch(`${VITE_API_URL}/acceso`, {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+        });
 
         //el backend me devuelve mi USUARIO completo
         //foto, nombre, email (NO CONTRASEÑA)
-        const responseData = userData;
+        const responseData = await response.json();
         localStorage.setItem("user", JSON.stringify(responseData));
 
         //con setUser guardo mis datos de usuario
-        setUser(userData);
+        setUser(responseData);
     }
-    //register
-    const register =(userData)=>{
+
+    //REGISTER
+    const register = async (userData)=>{
+
         //fetch para enviarle al backend!
+        const response = await fetch(`${VITE_API_URL}/registro`, {
+            method: "POST",
+            headers: {
+                'Content-type' : 'aplication/json'
+            },
+        });
+
         setUser(userData);
     }
-    //logout
+
+    //LOGOUT
     const logout = ()=>{
         console.log('Cerrar sesión');
          localStorage.removeItem("user");
@@ -54,3 +74,4 @@ export function UserProvider({children}){
 export function useUser(){
     return useContext(UserContext);
 }
+

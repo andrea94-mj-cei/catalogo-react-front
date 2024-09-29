@@ -1,7 +1,7 @@
 //importamos useroutererror para que nos salte el error por defecto del navegador
 import { useRouteError } from "react-router-dom";
 
-import (useRouteError)
+
 
 const ErrorPage = () => {
 
