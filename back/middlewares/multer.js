@@ -1,5 +1,6 @@
 import multer from "multer";
 import path from 'path';
+// import { upload } from './middlewares/multer.js';
 
 //v1 opcion minima
 // export const upload = multer ({dest: 'public/uploads'})
@@ -24,7 +25,7 @@ const storage = multer.diskStorage({
         // // ej: (avatar-9876554.png)
         // cb(null, `${file.fieldname}-${uniqueNumber}${extension}`); 
 
-        // V3 con fecha tipo DB "avatar-2024-09-23-123123123.png"
+        // V3 con fecha tipo DB "avatar-2024-09-23-123123123.png" (ESTA ES LA QUE DEBERÍAMOS USAR SIEMPRE)
         
         const extension = path.extname(file.originalname);
         const uniqueSuffix = new Date().toISOString().replace(/:/g, '-').replace(/\./g, '-');
@@ -34,6 +35,6 @@ const storage = multer.diskStorage({
 
 });
 
-//cb es funcion callback
+//CB ES FUNCIÓN CALLBACK
 
 export const upload = multer({storage:storage})

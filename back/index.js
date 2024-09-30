@@ -84,8 +84,13 @@ router.post('/api/v1/login', async (req, res, next) =>{
 
         console.log("User encontrado", user);
 
+        //Crear JWT Token y devuelvo el usuario
+
+        //Creamos una llave nueva (Create and Sing a New Token)
+        const token = jwt.sing({username:username}, JWT_SECRET, { expiresIn: '1h' });
+
     console.log("haciendo login");
-    res.status(200).json({data:user, mesage:"Aquí estan tus usuarios"});
+    res.status(200).json({data:user, mesage:"Login correcto", token});
     }catch (e){
     res.status(500).json({error: "Error en el servidor"})
     }
