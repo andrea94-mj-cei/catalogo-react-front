@@ -8,7 +8,11 @@ import jwt from 'jsonwebtoken'; // crear y leer tokens JWT
 import cors from 'cors';
 
 //configuraciones
-import {PORT, DOMAIN, JWT_SECRET, __dirname} from './config.js';
+import {PORT, DOMAIN, FULL_DOMAIN, JWT_SECRET, __dirname} from './config.js';
+import path from "path";
+
+//elementos de upload
+import { upload } from './middlewares/multer.js'; //meter dentro de rutas
 
 //utilies
 
@@ -16,6 +20,10 @@ const router = express();
 
 
 //Middleware
+
+// router.use("/", express.static('public'));
+//version compatible con VERCEL
+router.use(express.static(path.join(__dirname, 'public')));
 
 router.use(cors());
 router.use(express.json());
@@ -34,6 +42,23 @@ const MockUser = {
 
 
 //rutas
+
+//UPLOAD
+router.post("/api/v1/upload", upload.single("avatar"),  (req, res, next) =>{
+    console.log("Archivo subido")
+
+    console.log("file es:", req.file); // informacion del archivo
+    console.log("body es:", req.body); // otros campos del formulario
+
+    // guardar en la DB
+    res.status(201).json({
+        "mensaje": "Archivo subido correctamente",
+        file: req.file,
+        body: req.body,
+        peso: `${Math.round(req.file.size / 1024)} Kbytes`,
+        url: `${FULL_DOMAIN} /uploads/ ${req.file.filename}`,
+    })
+});
 
 router.get('/api/v1/users', async (req, res, next) =>{
     res.status(200).json({data:users, mesage:"Aquí están tus usuarios"});

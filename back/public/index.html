@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi backend</title>
+</head>
+<body>
+    <h2>Bienvenidos a mi backend de Express!!</h2>
+    <img src="portátil-de-computadora-usando-el-perro-nerd-divertido-en-puente-buscando-al-programador-mascotas-cámara-trabajo-remoto-176713395.webp" alt="perrito">
+
+    <h3>Crear Perfil</h3>
+    <form action="/api/v1/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="avatar">
+        <input type="text" name="nombre" placeholder="Nombre">
+        <input type="text" name="clave" placeholder="Contraseña">
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
