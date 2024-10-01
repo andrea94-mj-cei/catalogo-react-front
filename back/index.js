@@ -107,7 +107,7 @@ router.post('/api/v1/register', async (req, res, next) =>{
         const hashedPassword = await bcrypt.hash(password, saltRounds);
     
 
-    //Guardar esto en la BD(base de datos)
+    //Guardar esto en la BD(base de datos) // quitar el ID cuando meta la base de datos
     const id = Math.floor(Math.random()*10000) + 1;
     const newUser = {id,username, password:hashedPassword, name, image};
     users.push(newUser);
